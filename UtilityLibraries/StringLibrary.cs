@@ -22,5 +22,21 @@ namespace UtilityLibraries
             Char ch = str[0];
             return (Char.IsUpper(ch));
         }
+
+        /// <summary>
+        /// Returns a random string from a list
+        /// </summary>
+        /// <param name="lsWords">String list</param>
+        /// <returns>String</returns>
+        public static String randomWord(List<String> lsWords)
+        {
+            if (lsWords == null || lsWords.Count <= 0)
+                return "";
+            Random R = new Random();            
+            return lsWords[R.Next(0, lsWords.Count - 1)];
+        }
+
+
+
     }
 }
