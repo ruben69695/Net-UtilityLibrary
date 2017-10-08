@@ -11,7 +11,7 @@ namespace UtilityLibraries
     public static class IOLibrary
     {
         /// <summary>
-        /// Function that gets the total size of the directory in the digital unit passed as parameter        /// </summary>
+        /// Function that gets the total size of the directory in the digital unit passed as parameter</summary>
         /// <param name="directory">Directory to get the total size</param>
         /// <returns></returns>
         public static long GetDirectorySize(DirectoryInfo directory)
