@@ -35,5 +35,34 @@ namespace UtilityLibraries
 
             return bytes;
         }
+
+        /// <summary>
+        /// Method that deletes all the subdirectories
+        /// </summary>
+        /// <param name="directory">Name of the root directory</param>
+        public static void DeleteSubDirectories(DirectoryInfo directory)
+        {
+            foreach (DirectoryInfo subdirectory in directory.GetDirectories())
+            {
+                subdirectory.Delete(true);
+            }
+        }
+
+        /// <summary>
+        /// This method returns true if the path contains the .extension
+        /// </summary>
+        /// <param name="extension">Extensión de archivo que tiene que incluir el punto</param>
+        /// <param name="xpath">Path to check</param>
+        /// <returns></returns>
+        public static bool ExtensionCorrect(string extension, string xpath)
+        {
+            bool exist = false;
+            string[] partsOfPath = xpath.Split(Path.DirectorySeparatorChar);
+            if (partsOfPath[partsOfPath.Length - 1].Trim().Contains(extension))
+            {
+                exist = true;
+            }
+            return exist;
+        }
     }
 }
